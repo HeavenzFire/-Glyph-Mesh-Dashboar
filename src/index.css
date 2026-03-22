@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-mesh-cyan: #00f2ff;
+  --color-mesh-gold: #ffcc00;
+  --color-mesh-red: #ff3b3b;
+  --color-mesh-bg: #050505;
+  --color-mesh-card: #0a0a0a;
+  --color-mesh-border: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-mesh-bg text-white font-sans antialiased overflow-hidden;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.glyph-grid {
+  background-image: radial-gradient(circle at 1px 1px, #1a1a1a 1px, transparent 0);
+  background-size: 24px 24px;
+}
